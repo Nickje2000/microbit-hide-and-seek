@@ -2,15 +2,7 @@ radio.onReceivedNumber(function (receivedNumber) {
     if (Seeker == 1) {
         Signal = radio.receivedPacket(RadioPacketProperty.SignalStrength)
         if (Signal < -55) {
-            basic.showLeds(`
-                . . . . .
-                . . . . .
-                . . # . .
-                . . . . .
-                . . . . .
-                `)
-            music.play(music.tonePlayable(165, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
-            basic.pause(100)
+            Sonar()
         } else if (Signal < -47.5) {
             basic.showIcon(IconNames.SmallDiamond)
             music.play(music.tonePlayable(330, music.beat(BeatFraction.Whole)), music.PlaybackMode.UntilDone)
@@ -26,6 +18,72 @@ radio.onReceivedNumber(function (receivedNumber) {
         }
     }
 })
+function Sonar () {
+    basic.showLeds(`
+        . # # # .
+        # . # . #
+        # . # . #
+        # . . . #
+        . # # # .
+        `)
+    basic.pause(20)
+    basic.showLeds(`
+        . # # # .
+        # . . # #
+        # . # . #
+        # . . . #
+        . # # # .
+        `)
+    basic.pause(20)
+    basic.showLeds(`
+        . # # # .
+        # . . . #
+        # . # # #
+        # . . . #
+        . # # # .
+        `)
+    basic.pause(20)
+    basic.showLeds(`
+        . # # # .
+        # . . . #
+        # . # . #
+        # . . # #
+        . # # # .
+        `)
+    basic.pause(20)
+    basic.showLeds(`
+        . # # # .
+        # . . . #
+        # . # . #
+        # . # . #
+        . # # # .
+        `)
+    basic.pause(20)
+    basic.showLeds(`
+        . # # # .
+        # . . . #
+        # . # . #
+        # # . . #
+        . # # # .
+        `)
+    basic.pause(20)
+    basic.showLeds(`
+        . # # # .
+        # . . . #
+        # # # . #
+        # . . . #
+        . # # # .
+        `)
+    basic.pause(20)
+    basic.showLeds(`
+        . # # # .
+        # # . . #
+        # . # . #
+        # . . . #
+        . # # # .
+        `)
+    basic.pause(20)
+}
 input.onButtonPressed(Button.A, function () {
     if (Seeker == 0) {
         Seeker = 2
