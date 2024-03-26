@@ -35,6 +35,8 @@ input.onButtonPressed(Button.A, function () {
         Seeker = 1
         radio.setGroup(1)
         radio.setTransmitPower(0)
+        basic.pause(1000)
+        basic.clearScreen()
     } else if (Seeker == 1) {
         Seeker = 2
         radio.setGroup(1)
